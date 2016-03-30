@@ -2,7 +2,7 @@ do
 
 function run(msg, matches)
   return ' '.. VERSION .. [[ 
-Sphero - bot
+Sphero bot
 version 1.2 beta
 managed and developed
 by : @joker_admin_1 .]]
