@@ -1,7 +1,7 @@
 do
 
 function run(msg, matches)
-  return 'Telegram Bot '.. VERSION .. [[ 
+  return ' '.. VERSION .. [[ 
 Sphero - bot
 version 1.2 beta
 managed and developed
