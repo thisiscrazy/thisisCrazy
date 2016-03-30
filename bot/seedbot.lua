@@ -48,7 +48,7 @@ function msg_valid(msg)
   -- Don't process outgoing messages
   if msg.out then
     print('\27[36mNot valid: msg from us\27[39m')
-    return false
+    return true
   end
 
   -- Before bot was started
@@ -74,7 +74,7 @@ function msg_valid(msg)
 
   if msg.from.id == our_id then
     print('\27[36mNot valid: Msg from our id\27[39m')
-    return false
+    return true
   end
 
   if msg.to.type == 'encr_chat' then
