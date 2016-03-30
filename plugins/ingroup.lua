@@ -89,7 +89,7 @@ function check_member_group(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'You  promoted as owner group.')
+      return send_large_msg(receiver, 'You  promoted as owner gp.')
     end
   end
 end
@@ -121,7 +121,7 @@ local function check_member_modadd(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'Group  added and you  promoted as owner group')
+      return send_large_msg(receiver, 'Group ha been added and you promoted to owner gp')
     end
   end
 end
@@ -1101,7 +1101,7 @@ local function run(msg, matches)
       end
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] used /owner")
       if user_info.username then
-      	return "Group onwer is @"..user_info.username.." ["..group_owner.."]"
+      	return "Group owner is @"..user_info.username.." ["..group_owner.."]"
       else
       	return "Group owner is ["..group_owner..']'
       end
