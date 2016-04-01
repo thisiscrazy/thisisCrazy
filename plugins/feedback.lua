@@ -1,21 +1,43 @@
 do
- function run(msg, matches)
- local fuse = '#NewFeedback\n\nUsername: @''\n\nUserId : ' .. msg.from.id .. '\n\nGroupId : ' .. msg.to.id .. '\n\nName: ' .. msg.from.print_name .. '\n\nMessage:\n\n'  .. matches[1]
- local fuses = '!printf user#id' .. msg.from.id
- local text = matches[1]
- local sends = send_msg('user#id147696943', fuse, ok_cb, false)
- return 'Your Feedback Sucessfuly Send to Support Sphero!'
- end
+
+function run(msg, matches)
+
+local fuse = '#DearAdmin , we have recive a new feedback just now : #newfeedback \n\nID : ' .. msg.from.id .. '\n\nName : ' .. msg.from.print_name ..'\n\nusername : @' .. msg.from.username  ..'\n\nFeedBack :\n\n\n' .. matches[1] 
+local fuses = '!printf user#id' .. msg.from.id
+
+
+    local text = matches[1]
+ bannedidone = string.find(msg.from.id, '123')
+        bannedidtwo =string.find(msg.from.id, '465')       
+   bannedidthree =string.find(msg.from.id, '678')  
+
+
+        print(msg.to.id)
+
+        if bannedidone or bannedidtwo or bannedidthree then                    --for banned people
+                return 'You are banned to send a feedback'
+ else
+
+
+                 local sends0 = send_msg('chat#36515907', fuse, ok_cb, false)
+
+ return 'thank you"..msg.from.print_name.."\nyour feedback succsefulli send to Support Sphero :)'
+
+     
+
+end
+
 end
 return {
-description = "Feedback",
-usage = "feedback message",
-patterns = {
+  description = "Feedback",
 
- "^[Ff]eedback (.*)$",
- "^[!/][Ff]eedback (.*)$"
- 
+  usage = "feedback : send maseage to admins with bot",
+  patterns = {
+    "^feedback (.*)$"
 
- },
- run = run
+  },
+  run = run
 }
+
+end
+--add your realm id to line 22 chat#
