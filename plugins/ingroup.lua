@@ -999,7 +999,11 @@ local function run(msg, matches)
       if matches[2] == 'member' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked member ")
         return lock_group_membermod(msg, data, target)
-        end
+      end
+       if matches[2] == 'english' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked english ")
+        return lock_group_englishmod(msg, data, target)
+      end
       if matches[2] == 'flood' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked flood ")
         return lock_group_floodmod(msg, data, target)
@@ -1026,6 +1030,10 @@ local function run(msg, matches)
       if matches[2] == 'member' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked member ")
         return unlock_group_membermod(msg, data, target)
+      end
+        if matches[2] == 'english' then
+        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked english ")
+        return unlock_group_englishmod(msg, data, target)
       end
       if matches[2] == 'photo' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked photo ")
