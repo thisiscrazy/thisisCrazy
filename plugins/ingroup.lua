@@ -89,7 +89,7 @@ function check_member_group(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'You  promoted as owner gp.')
+      return send_large_msg(receiver, 'You  promoted as owner group.')
     end
   end
 end
@@ -121,7 +121,7 @@ local function check_member_modadd(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'Group ha been added and you promoted to owner gp')
+      return send_large_msg(receiver, 'Group  added and you  promoted as owner group')
     end
   end
 end
@@ -204,7 +204,7 @@ local function show_group_settingsmod(msg, data, target)
     	leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
    	end
   local settings = data[tostring(target)]['settings']
-  local text = "Group settings:\n#Lock name : "..settings.lock_name.."\n#Lock photo : "..settings.lock_photo.."\n#Lock member : "..settings.lock_member.."\n#Lock leave : "..leave_ban.."\n#flood sensitivity : "..NUM_MSG_MAX.."\n#Bot protection : "..bots_protection--"\nPublic: "..public
+  local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nLock group leave : "..leave_ban.."\nflood sensitivity : "..NUM_MSG_MAX.."\nBot protection : "..bots_protection--"\nPublic: "..public
   return text
 end
 
@@ -347,6 +347,12 @@ local function lock_group_membermod(msg, data, target)
   if group_member_lock == 'yes' then
     return 'members already locked'
   else
+    data[tostring(target)]['settings']['lock_member'] = 'yes'
+    save_data(_config.moderation.data, data)
+  end
+  return 'members locked'
+end
+
 local function unlock_group_membermod(msg, data, target)
   if not is_momod(msg) then
     return "For moderators!"
@@ -360,6 +366,7 @@ local function unlock_group_membermod(msg, data, target)
     return 'members unlocked'
   end
 end
+
 
 local function set_public_membermod(msg, data, target)
   if not is_momod(msg) then
@@ -973,7 +980,7 @@ local function run(msg, matches)
       if matches[2] == 'member' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked member ")
         return lock_group_membermod(msg, data, target)
-      end
+        end
       if matches[2] == 'flood' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked flood ")
         return lock_group_floodmod(msg, data, target)
@@ -1094,7 +1101,7 @@ local function run(msg, matches)
       end
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] used /owner")
       if user_info.username then
-      	return "Group owner is @"..user_info.username.." ["..group_owner.."]"
+      	return "Group onwer is @"..user_info.username.." ["..group_owner.."]"
       else
       	return "Group owner is ["..group_owner..']'
       end
