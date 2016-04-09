@@ -16,7 +16,6 @@ local function check_member_autorealm(cb_extra, success, result)
           lock_name = 'yes',
           lock_photo = 'no',
           lock_member = 'no',
-          lock_english = 'no',
           flood = 'yes'
         }
       }
@@ -47,7 +46,6 @@ local function check_member_realm_add(cb_extra, success, result)
           lock_name = 'yes',
           lock_photo = 'no',
           lock_member = 'no',
-          lock_english = 'no',
           flood = 'yes'
         }
       }
@@ -80,7 +78,6 @@ function check_member_group(cb_extra, success, result)
           lock_name = 'yes',
           lock_photo = 'no',
           lock_member = 'no',
-          lock_english = 'no',
           flood = 'yes',
         }
       }
@@ -113,7 +110,6 @@ local function check_member_modadd(cb_extra, success, result)
           lock_name = 'yes',
           lock_photo = 'no',
           lock_member = 'no',
-          lock_english = 'no',
           flood = 'yes',
         }
       }
@@ -208,7 +204,7 @@ local function show_group_settingsmod(msg, data, target)
     	leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
    	end
   local settings = data[tostring(target)]['settings']
-  local text = "Group settings:\n#Lock name : "..settings.lock_name.."\n#Lock photo : "..settings.lock_photo.."\n#Lock member : "..settings.lock_member.."\n#Lock leave : "..leave_ban.."\n#flood sensitivity : "..NUM_MSG_MAX.."\n#Bot protection : "..bots_protection--"\nPublic: "..public.."\n#Lock english : "..settings.lock_english
+  local text = "Group settings:\n#Lock name : "..settings.lock_name.."\n#Lock photo : "..settings.lock_photo.."\n#Lock member : "..settings.lock_member.."\n#Lock leave : "..leave_ban.."\n#flood sensitivity : "..NUM_MSG_MAX.."\n#Bot protection : "..bots_protection--"\nPublic: "..public
   return text
 end
 
@@ -362,28 +358,6 @@ local function unlock_group_membermod(msg, data, target)
     data[tostring(target)]['settings']['lock_member'] = 'no'
     save_data(_config.moderation.data, data)
     return 'members unlocked'
-  end
-end
-
-local function lock_group_englishmod(msg, data, target)
-  if not is_momod(msg) then
-    return "For mods!"
-  end
-    local group_english_lock = data[tostring(target)]['settings']['lock_english']
-  if group_english_lock == 'yes' then
-    return 'english already locked'
-  else
-local function unlock_group_englishmod(msg, data, target)
-  if not is_momod(msg) then
-    return "For mods!"
-  end
-    local group_member_lock = data[tostring(target)]['settings']['lock_english']
-  if group_english_lock == 'no' then
-    return 'english are not locked'
-  else
-    data[tostring(target)]['settings']['lock_english'] = 'no'
-    save_data(_config.moderation.data, data)
-    return 'english unlocked'
   end
 end
 
@@ -1000,10 +974,6 @@ local function run(msg, matches)
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked member ")
         return lock_group_membermod(msg, data, target)
       end
-       if matches[2] == 'english' then
-        savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked english ")
-        return lock_group_englishmod(msg, data, target)
-      end
       if matches[2] == 'flood' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked flood ")
         return lock_group_floodmod(msg, data, target)
@@ -1030,10 +1000,6 @@ local function run(msg, matches)
       if matches[2] == 'member' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked member ")
         return unlock_group_membermod(msg, data, target)
-      end
-        if matches[2] == 'english' then
-        savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked english ")
-        return unlock_group_englishmod(msg, data, target)
       end
       if matches[2] == 'photo' then
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked photo ")
