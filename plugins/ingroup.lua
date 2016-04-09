@@ -189,22 +189,22 @@ local function show_group_settingsmod(msg, data, target)
   	local data = load_data(_config.moderation.data)
     if data[tostring(msg.to.id)] then
      	if data[tostring(msg.to.id)]['settings']['flood_msg_max'] then
-        	NUM_MSG_MAX = tonumber(data[tostring(msg.to.id)]['settings']['#flood_msg_max'])
+        	NUM_MSG_MAX = tonumber(data[tostring(msg.to.id)]['settings']['flood_msg_max'])
         	print('custom'..NUM_MSG_MAX)
       	else 
         	NUM_MSG_MAX = 5
       	end
     end
     local bots_protection = "Yes"
-    if data[tostring(msg.to.id)]['settings']['#lock_bots'] then
-    	bots_protection = data[tostring(msg.to.id)]['settings']['#lock_bots']
+    if data[tostring(msg.to.id)]['settings']['lock_bots'] then
+    	bots_protection = data[tostring(msg.to.id)]['settings']['lock_bots']
    	end
     local leave_ban = "no"
-    if data[tostring(msg.to.id)]['settings']['#leave_ban'] then
-    	leave_ban = data[tostring(msg.to.id)]['settings']['#leave_ban']
+    if data[tostring(msg.to.id)]['settings']['leave_ban'] then
+    	leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
    	end
   local settings = data[tostring(target)]['settings']
-  local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group member : "..settings.lock_member.."\nLock group leave : "..leave_ban.."\nflood sensitivity : "..NUM_MSG_MAX.."\nBot protection : "..bots_protection--"\nPublic: "..public
+  local text = "Group settings:\n#Lock name : "..settings.lock_name.."\n#Lock photo : "..settings.lock_photo.."\n#Lock member : "..settings.lock_member.."\n#Lock leave : "..leave_ban.."\n#flood sensitivity : "..NUM_MSG_MAX.."\n#Bot protection : "..bots_protection--"\nPublic: "..public
   return text
 end
 
