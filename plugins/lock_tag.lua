@@ -1,5 +1,4 @@
 local function run(msg, matches)
-if msg.to.type == 'chat' then
     if is_owner(msg) then
         return
     end
@@ -14,21 +13,16 @@ if msg.to.type == 'chat' then
     local chat = get_receiver(msg)
     local user = "user#id"..msg.from.id
     if lock_tag == "yes" then
-        send_large_msg(chat, 'Tag is not allowed here!!')
+        send_large_msg(chat, 'tag is not allowed here'
         chat_del_user(chat, user, ok_cb, true)
     end
 end
- end
+ 
 return {
-	usage = {
-		"lock tag: If User Send A Message With # , @ Then Bot Removed User.",
-		"unlock tag: No Action Execute If User Send Mesage With # , @",
-		},
   patterns = {
-    "@",
-	"#"
+    "#(.*)",
+    "@(.*)"
   },
   run = run
 }
-Status API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
+
