@@ -257,7 +257,7 @@ local function show_group_settingsmod(msg, data, target)
       leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
      end
   local settings = data[tostring(target)]['settings']
-  local text = "⚙Group settings :\n_____________________\n⚡️Lock group name : "..settings.lock_name.."\n⚡️Lock group photo : "..settings.lock_photo.."\n⚡️Lock group member : "..settings.lock_member.."\n⚡️Lock leave : "..settings.leave_ban.."\n⚡Lock arabic : "..settings.lock_arabic.."\n⚡️Lock english : "..settings.lock_english.."\n⚡️Lock chat : "..settings.lock_chat.."\n⚡Lock join : "..settings.lock_join.."\n⚡️Lock tag : "..settings.antitag.."\n⚡Lock link : "..settings.lock_ads.."\n⚡️Lock share : "..settings.lock_share.."\n⚡️Lock video : "..settings.lock_video.."\n⚡️Lock voice : "..settings.lock_voice.."\n⚡️Flood sensitivity : "..NUM_MSG_MAX.."\n⚡️Bot protection : "..bots_protection.."\n_____________________\nRed Bot"
+  local text = "#Group settings :\n#Lock group name : "..settings.lock_name.."\n#Lock group photo : "..settings.lock_photo.."\n#Lock group member : "..settings.lock_member.."\n#Lock leave : "..settings.leave_ban.."\n#Lock arabic : "..settings.lock_arabic.."\n#Lock english : "..settings.lock_english.."\n#Lock chat : "..settings.lock_chat.."\n#Lock join : "..settings.lock_join.."\n#Lock tag : "..settings.antitag.."\n#Lock link : "..settings.lock_ads.."\n#Lock share : "..settings.lock_share.."\n#Lock video : "..settings.lock_video.."\n#Lock voice : "..settings.lock_voice.."\n#Flood sensitivity : "..NUM_MSG_MAX.."\n#Bot protection : "..bots_protection.."\n====\nDeveloped by @joker_admin_1"
   return text
 end
 
