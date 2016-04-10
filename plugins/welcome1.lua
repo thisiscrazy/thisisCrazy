@@ -70,7 +70,7 @@ local function run(msg, matches)
       return "Are you trying to troll me?"
    end
    --vardump(msg)
-   if matches[1] == "chat_add_user" then
+   if matches[1] == "channel_add_user" then
       if not msg.action.user.username then
           nama = string.gsub(msg.action.user.print_name, "_", " ")
       else 
@@ -86,7 +86,7 @@ local function run(msg, matches)
       end
       chat_new_user_link(msg)
       description_rules(msg, nama)
-   elseif matches[1] == "chat_del_user" then
+   elseif matches[1] == "channel_del_user" then
        local bye_name = msg.action.user.first_name
        return 'bye!'..bye_name
    end
@@ -96,9 +96,9 @@ return {
    description = "Welcoming Message",
    usage = "send message to new member",
    patterns = {
-      "^!!tgservice (chat_add_user)$",
+      "^!!tgservice (channel_add_user)$",
       "^!!tgservice (chat_add_user_link)$",
-      "^!!tgservice (chat_del_user)$",
+      "^!!tgservice (channel_del_user)$",
    },
    run = run
 }
