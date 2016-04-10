@@ -235,7 +235,7 @@ local lock_sticker = "ok"
         lock_sticker = data[tostring(msg.to.id)]['settings']['sticker']
         end
          local settings = data[tostring(target)]['settings']
-  local text = "#Group settings:\n#Lock group name : "..settings.lock_name.."\n#Lock group photo : "..settings.lock_photo.."\n#Lock group tag : "..lock_tag.."\n#Lock group member : "..settings.lock_member.."\n#Lock group english 🗣 : "..lock_eng.."\n#Lock group leave : "..lock_leave.."\n#Lock group badw : "..lock_badw.."\n#Lock group links : "..lock_link.."\n#Lock group sticker : "..lock_sticker.."\n#flood number : "..NUM_MSG_MAX.."\n#Lock group Bot : "..bots_protection--"\nPublic: "..public
+  local text = "Group settings:\nLock group name : "..settings.lock_name.."\nLock group photo : "..settings.lock_photo.."\nLock group tag : "..lock_tag.."\nLock group member : "..settings.lock_member.."\nLock group english 🗣 : "..lock_eng.."\n Lock group leave : "..lock_leave.."\nLock group bad words : "..lock_badw.."\nLock group links : "..lock_link.."\nLock group sticker : "..lock_sticker.."\nflood sensitivity : "..NUM_MSG_MAX.."\nBot protection : "..bots_protection--"\nPublic: "..public
   return text
 end
 
@@ -1647,4 +1647,3 @@ return {
 end
 
 
-Status API Training Shop Blog About
