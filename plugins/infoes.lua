@@ -1,11 +1,9 @@
 do
 
 function run(msg, matches)
-local reply_id = msg['myaboute']
+local reply_id = msg['info']
 
-local myaboute = '🔰FirstName : '..msg.from.first_name..'\n\n'
-..'🔰Lastname : '..msg.from.last_name..'\n'
-..'🔰Fullname : '..msg.from.print_name..'\n'
+local info = '🔰FirstName : '..msg.from.first_name..'\n\n'
 ..'🔰Id : '..msg.from.id..'\n'
 ..'🔰Username : @'..msg.from.username..'\n'
 ..'🔰Msg ID : '..msg.id..'\n'
@@ -19,7 +17,7 @@ end
 
 return {
 patterns = {
-"^[!/#][Mm][Yy][Aa][Bb][Oo][Uu][Tt][Ee]"
+"^[!/#][Ii][Nn][Ff][Oo]"
 
 },
 run = run
