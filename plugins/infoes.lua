@@ -19,7 +19,7 @@ end
 
 return {
 patterns = {
-"^[!/#]myaboute"
+"^[!/#][Mm][Yy][Aa][Bb][Oo][Uu][Tt][Ee]"
 
 },
 run = run
