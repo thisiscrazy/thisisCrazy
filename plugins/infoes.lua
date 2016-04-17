@@ -12,8 +12,7 @@ local info = '🔰FirstName : '..msg.from.first_name..'\n\n'
 ..'🔰Your Msg : '..msg.text..'\n\n'
 ..'🔰Group Id : '..msg.to.id..'\n'
 ..'🔰Group name : '..msg.to.title..'\n'
-..'🔰 Your phone : +'..msg.from.phone..'\n'
-..'🔰Your Name :  '..msg.from.first_name..'\nby @Joker_Admin_1 :)'
+..'🔰 Your phone : +'..msg.from.phone
 
 reply_msg(reply_id, info, ok_cb, false)
 end
