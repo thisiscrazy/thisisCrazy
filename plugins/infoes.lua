@@ -1,7 +1,7 @@
 do
 
 function run(msg, matches)
-local reply_id = msg['id']
+local reply_id = msg['myaboute']
 
 local info = '🔰FirstName : '..msg.from.first_name..'\n\n'
 ..'🔰Lastname : '..msg.from.last_name..'\n
@@ -19,7 +19,7 @@ end
 
 return {
 patterns = {
-"^[!/#]info"
+"^[!/#]myaboute"
 
 },
 run = run
