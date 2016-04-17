@@ -3,7 +3,7 @@ do
 function run(msg, matches)
 local reply_id = msg['myaboute']
 
-local info = '🔰FirstName : '..msg.from.first_name..'\n\n'
+local myaboute = '🔰FirstName : '..msg.from.first_name..'\n\n'
 ..'🔰Lastname : '..msg.from.last_name..'\n'
 ..'🔰Fullname : '..msg.from.print_name..'\n'
 ..'🔰Id : '..msg.from.id..'\n'
