@@ -1527,9 +1527,9 @@ if matches[1] == 'newlink' and not is_realm(msg) then
       if user_info.username then
       	return "#Group owner  @"..user_info.username.." ["..group_owner.."]"
       else
-      	return "#Group owner is ["..group_owner..']'
+      	return "#Group owner ["..group_owner..']'
     	end
-    	end
+    end
     if matches[1] == 'setgpowner' then
       local receiver = "chat#id"..matches[2]
       if not is_admin(msg) then
