@@ -1524,10 +1524,7 @@ if matches[1] == 'newlink' and not is_realm(msg) then
         return "no owner,ask admins in support groups to set owner for your group"
       end
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] used /owner")
-      if user_info.username then
-      	return "#Group owner  @"..user_info.username.." ["..group_owner.."]"
-      else
-      	return "#Group owner ["..group_owner..']'
+      	return "#Group owner ["..group_owner.."]"
     	end
     end
     if matches[1] == 'setgpowner' then
