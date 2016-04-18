@@ -1524,8 +1524,7 @@ if matches[1] == 'newlink' and not is_realm(msg) then
         return "no owner,ask admins in support groups to set owner for your group"
       end
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] used /owner")
-      	return "#Group owner ["..group_owner.."]"
-    	end
+      	return "Group owner ["..group_owner..']'
     end
     if matches[1] == 'setgpowner' then
       local receiver = "chat#id"..matches[2]
