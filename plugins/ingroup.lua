@@ -1524,7 +1524,7 @@ if matches[1] == 'newlink' and not is_realm(msg) then
         return "no owner,ask admins in support groups to set owner for your group"
       end
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] used /owner")
-      return "#Group owner : "@"..user_info.username.." ["..group_owner.."]"
+      return "Group owner : "@"..user_info.username.." ["..group_owner.."]"
     end
     if matches[1] == 'setgpowner' then
       local receiver = "chat#id"..matches[2]
@@ -1565,7 +1565,7 @@ if matches[1] == 'newlink' and not is_realm(msg) then
         if next(data[tostring(msg.to.id)]['moderators']) == nil then --fix way
           return 'No moderator in this group.'
         end
-        local message = '\n#modlist for ' .. string.gsub(msg.to.print_name, '_', ' ') .. ':\n'
+        local message = '\n modlist for ' .. string.gsub(msg.to.print_name, '_', ' ') .. ':\n'
         for k,v in pairs(data[tostring(msg.to.id)]['moderators']) do
           data[tostring(msg.to.id)]['moderators'][tostring(k)] = nil
           save_data(_config.moderation.data, data)
