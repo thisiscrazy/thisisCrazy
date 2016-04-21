@@ -21,13 +21,13 @@ local function res_user_callback(extra, success, result) -- /info <username> fun
    Username = '----'
   end
     local text = 'Full name : '..(result.first_name or '')..' '..(result.last_name or '')..'\n'
-               ..'User name: '..Username..'\n'
-               ..'ID : '..result.id..'\n\n'
+               ..'User name: '..Username..'\n 
+               ..'ID : '..result.id..'\n\n
 	local hash = 'rank:'..extra.chat2..':variables'
 	local value = redis:hget(hash, result.id)
     if not value then
 	 if result.id == tonumber(AmirSbss) then
-	   text = text..'Rank : Amir Sbss \n\n'
+	   text = text..'Rank : My developer \n\n'
 	  elseif is_admin2(result.id) then
 	   text = text..'Rank : Admin \n\n'
 	  elseif is_owner2(result.id, extra.chat2) then
@@ -44,8 +44,8 @@ local function res_user_callback(extra, success, result) -- /info <username> fun
   local user = redis:hgetall(uhash)
   local um_hash = 'msgs:'..result.id..':'..extra.chat2
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
-  text = text..'Total messages : '..user_info_msgs..'\n\n'
-  text = text..'#Sbss_Team'
+text = text..'Total messages : '..user_info_msgs..'\n\n'
+  text = text..'@SpheroCh'
   send_msg(extra.receiver, text, ok_cb,  true)
   else
 	send_msg(extra.receiver, ' Username not found.', ok_cb, false)
@@ -66,7 +66,7 @@ local function action_by_id(extra, success, result)  -- /info <ID> function
   local value = redis:hget(hash, result.id)
   if not value then
 	 if result.id == tonumber(AmirSbss) then
-	   text = text..'Rank : Amir Sbss \n\n'
+	   text = text..'Rank : My developer \n\n'
 	  elseif is_admin2(result.id) then
 	   text = text..'Rank : Admin \n\n'
 	  elseif is_owner2(result.id, extra.chat2) then
@@ -84,7 +84,7 @@ local function action_by_id(extra, success, result)  -- /info <ID> function
   local um_hash = 'msgs:'..result.id..':'..extra.chat2
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
   text = text..'Total messages : '..user_info_msgs..'\n\n'
-  text = text..'#Sbss_Team'
+  text = text..'@SpheroCh'
   send_msg(extra.receiver, text, ok_cb,  true)
   else
   send_msg(extra.receiver, 'id not found.\nuse : /info @username', ok_cb, false)
@@ -202,7 +202,6 @@ local function run(msg, matches)
     if msg.to.type == 'chat' then
 	 text = text..'Group name : '..msg.to.title..'\n'
      text = text..'Group ID : '..msg.to.id
-text = text..'MsG : '..msg.text..'
 end
 	text = text..'\n\n@SpheroCh'
     return send_msg(receiver, text, ok_cb, true)
