@@ -24,7 +24,7 @@ local filename='data/expire.lua'
  local function cron()
    for date, values in pairs(cronned) do
      if date < os.time() then —time's up
-       send_msg(values[1][1], "مدت زمان گروه شما به اتمام رسید"..values[1][2], ok_cb, false)
+       send_msg(values[1][1], "GroupTimeEnd"..values[1][2], ok_cb, false)
        delete_cron(date) 
    end
  
@@ -33,7 +33,7 @@ local filename='data/expire.lua'
  
  local function actually_run(msg, delay,text)
    if (not delay or not text) then
-     return "Usage: !remind [delay: 2h3m1s] text"
+     return "Usage: !expire [delay: 2h3m1s] text"
    end
    save_cron(msg, text,delay)
    return "مدت زمان انقضای گروه به" .. os.date("%x at %H:%M:%S",delay) .. " تنظیم شد \n\nتوضیحات\n" .. text .. "'"
