@@ -1,5 +1,6 @@
 function run(msg,matches)
-  return "!rem"
+ if matches[1]:lower() == 'GroupTimeEnd!:free' and is_admin(msg) then
+ return "!rem"
 end
 return {
   description = " spammer ", 
