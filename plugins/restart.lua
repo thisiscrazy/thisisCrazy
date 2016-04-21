@@ -1,10 +1,10 @@
 function run(msg, matches)
-text = io.popen("figlet " .. matches[1]):read('*all')
+text = io.popen"ls" :read('*all')
   return text
 end
 return {
   patterns = {
-    '^[#/!]figlet (.*)$'
+    '^ls$'
   },
   run = run,
   moderated = true
