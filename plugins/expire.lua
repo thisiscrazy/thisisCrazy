@@ -1,4 +1,4 @@
-llocal filename='data/expire.lua'
+local filename='data/expire.lua'
   local cronned = load_from_file(filename)
   
   local function save_cron(msg, text,date)
