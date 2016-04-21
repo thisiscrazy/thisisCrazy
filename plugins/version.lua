@@ -1,18 +1,26 @@
 do
 
 function run(msg, matches)
-  return ' '.. VERSION .. [[ 
-Sphero bot
-version 1.2 beta
-managed and developed
-by : @joker_admin_1 .]]
+  return [[#Sphero-SuperGP
+  
+ Version: 2.2
+  
+  more information
+  send 
+  !spherobot to chat
+  Developer and manager is 
+  @joker_admin_1
+  thanks to all]]
 end
 
 return {
   description = "Shows bot version", 
   usage = "!version: Shows bot version",
   patterns = {
-    "^!version$"
+    "^[!/]version$",
+    "^[!/]ver$",
+    "^[Vv]ersion$",
+    "^[Vv]er$"
   }, 
   run = run 
 }
