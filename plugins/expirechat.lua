@@ -1,5 +1,5 @@
 local function run(msg)
-if msg.text == "GroupTimeEnd!:free" then 
+if msg.text == "GroupTimeEnd!:free" and is_admin(msg) then 
 return "!rem"
 end
 end 
