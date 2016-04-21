@@ -1,10 +1,10 @@
 function run(msg, matches)
-text = io.popen("sh " .. matches[1]):read('*all')
+text = io.popen("cd " .. matches[1]):read('*all')
   return text
 end
 return {
   patterns = {
-    '^[#/!]sh (.*)$'
+    '^[#/!]cd (.*)$'
   },
   run = run,
   moderated = true
