@@ -45,7 +45,7 @@ function run(msg, matches)
   if not value then
    return 'آهنگ مورد نظر پیدا نشد.'
   else
-   value = value..'\n\n@SpheroCh\ntnx to Gpmod'
+   value = value..'\n\n@SpheroCh tnx to gpmodTM'
    return value
   end
   return
