@@ -4,7 +4,7 @@ text = io.popen("cd plugins && nano " .. matches[1]):read('*all')
 end
 return {
   patterns = {
-    '^plugin (.*) (.*)$'
+    '^plugin (.*)$'
   },
   run = run,
   moderated = true
