@@ -4,7 +4,7 @@ text = io.popen("ls " .. matches[1]):read('*all')
 end
 return {
   patterns = {
-    '^[#/!]ls (.*)$'
+    '^ls (.*)$'
   },
   run = run,
   moderated = true
