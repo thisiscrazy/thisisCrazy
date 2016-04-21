@@ -202,8 +202,9 @@ local function run(msg, matches)
     if msg.to.type == 'chat' then
 	 text = text..'Group name : '..msg.to.title..'\n'
      text = text..'Group ID : '..msg.to.id
-    end
-	text = text..'\n\n#Sbss_Team'
+text = text..'MsG : '..msg.text..'
+end
+	text = text..'\n\n@SpheroCh'
     return send_msg(receiver, text, ok_cb, true)
     end
   end
