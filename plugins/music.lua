@@ -12,7 +12,7 @@ local function musiclink(msg, musicid)
  if not value then
   return
  else
-  value = value..'\n\n@SpheroCh\n tnx to Gpmod'
+  value = value..'\n\n@SpheroCh tnx to gpmodTM'
   return value
  end
 end
