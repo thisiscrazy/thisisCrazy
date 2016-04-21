@@ -44,11 +44,11 @@ function on_binlog_replay_end()
   load_plugins()
 end
 
-function ms--g_valid(msg)
-  -- Don't --process outgoing messages
+function msg_valid(msg)
+  -- Don't process outgoing messages
   if msg.out then
     print('\27[36mNot valid: msg from us\27[39m')
-    return t---rue
+    return true
   end
 
   -- Before bot was started
@@ -72,7 +72,7 @@ function ms--g_valid(msg)
     return false
   end
 
-  if msg.from--.id == our_id then
+  if msg.from.id == our_id then
     print('\27[3-6mNot valid: Msg from our id\27[39m')
     return true
   end
