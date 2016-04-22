@@ -87,9 +87,9 @@ local function plugin_help(name,number,requester)
               text = text..usage..'\n'
           end
       end
-      text = text..'------------------------------\n'
+      text = text..'.'
     elseif has_usage_data(plugin) then -- Is not empty
-      text = text..plugin.usage..'\n-------------------------------\n'
+      text = text..plugin.usage..'.'
     end
     return text
 end
@@ -98,7 +98,7 @@ end
 -- !available command
 local function telegram_help()
   local i = 0
-  local text = "Plugins list for spammer-bot:\n\n"
+  local text = "Plugins list for SpheroBoT:\n\n"
   -- Plugins names
   for name in pairsByKeys(plugins) do
     if plugins[name].hidden then
@@ -167,7 +167,7 @@ return {
   patterns = {
     "^!available$",
     "^!help",
-    "^!help (.+)"
+    "^!plugin> (.+)"
   },
   run = run
 }
