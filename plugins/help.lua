@@ -98,7 +98,7 @@ end
 -- !available command
 local function telegram_help()
   local i = 0
-  local text = "Plugins list for SpheroBoT:\n\n"
+  local text = "Tools for SpheroBoT:\n\n"
   -- Plugins names
   for name in pairsByKeys(plugins) do
     if plugins[name].hidden then
@@ -109,8 +109,8 @@ local function telegram_help()
     end
   end
   text = text..'\n'..'There are '..i..' plugins help available.'
-  text = text..'\n'..'Write "!help [plugin name]" or "!help [plugin number]" for more info.'
-  text = text..'\n'..'Or "!help all" to show all info.'
+  text = text..'\n'..'Write "!plugin> [plugin name]" or "plugin> [plugin number]" for more info.'
+  text = text..'\n'..'Or "!help" to show all info.'
   return text
 end
  
@@ -159,10 +159,10 @@ end
 return {
   description = "Help plugin. Get info from other plugins.  ",
   usage = {
-    "!available: Show list of plugins for spammer-bot.",
+    "!available: Show list of plugins for SpheroBoT.",
     "!help: Show all commands for every plugin.",
-    "!help [plugin name]: Commands for that plugin.",
-    "!help [number]: Commands for that plugin. Type !help to get the plugin number."
+    "!plugin> [plugin name]: Commands for that plugin.",
+    "!plugin> [number]: Commands for that plugin. Type !help to get the plugin number."
   },
   patterns = {
     "^!available$",
