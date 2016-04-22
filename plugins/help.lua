@@ -4,8 +4,8 @@ function pairsByKeys(t, f)
       local a = {}
       for n in pairs(t) do table.insert(a, n) end
       table.sort(a, f)
-      local i = 0      — iterator variable
-      local iter = function ()   — iterator function
+      local i = 0      -- iterator variable
+      local iter = function ()   -- iterator function
         i = i + 1
         if a[i] == nil then return nil
         else return a[i], t[a[i]]
@@ -14,7 +14,7 @@ function pairsByKeys(t, f)
       return iter
     end
  
-— Returns true if is not empty
+-- Returns true if is not empty
 local function has_usage_data(dict)
   if (dict.usage == nil or dict.usage == '') then
     return false
@@ -22,7 +22,7 @@ local function has_usage_data(dict)
   return true
 end
  
-— Get commands for that plugin
+-- Get commands for that plugin
 local function plugin_help(name,number,requester)
   local plugin = ""
   if number then
@@ -45,41 +45,41 @@ local function plugin_help(name,number,requester)
     local text = ""
     if (type(plugin.usage) == "table") then
       for ku,usage in pairs(plugin.usage) do
-          if ku == 'user' then — usage for user
+          if ku == 'user' then -- usage for user
               if (type(plugin.usage.user) == "table") then
                   for k,v in pairs(plugin.usage.user) do
                       text = text..v..'\n'
                   end
-              elseif has_usage_data(plugin) then — Is not empty
+              elseif has_usage_data(plugin) then -- Is not empty
                   text = text..plugin.usage.user..'\n'
               end
-          elseif ku == 'moderator' then — usage for moderator
+          elseif ku == 'moderator' then -- usage for moderator
               if requester == 'moderator' or requester == 'admin' or requester == 'sudo' then
                   if (type(plugin.usage.moderator) == "table") then
                       for k,v in pairs(plugin.usage.moderator) do
                           text = text..v..'\n'
                       end
-                  elseif has_usage_data(plugin) then — Is not empty
+                  elseif has_usage_data(plugin) then -- Is not empty
                       text = text..plugin.usage.moderator..'\n'
                   end
               end
-          elseif ku == 'admin' then — usage for admin
+          elseif ku == 'admin' then -- usage for admin
               if requester == 'admin' or requester == 'sudo' then
                   if (type(plugin.usage.admin) == "table") then
                       for k,v in pairs(plugin.usage.admin) do
                           text = text..v..'\n'
                       end
-                  elseif has_usage_data(plugin) then — Is not empty
+                  elseif has_usage_data(plugin) then -- Is not empty
                       text = text..plugin.usage.admin..'\n'
                   end
               end
-          elseif ku == 'sudo' then — usage for sudo
+          elseif ku == 'sudo' then -- usage for sudo
               if requester == 'sudo' then
                   if (type(plugin.usage.sudo) == "table") then
                       for k,v in pairs(plugin.usage.sudo) do
                           text = text..v..'\n'
                       end
-                  elseif has_usage_data(plugin) then — Is not empty
+                  elseif has_usage_data(plugin) then -- Is not empty
                       text = text..plugin.usage.sudo..'\n'
                   end
               end
@@ -87,19 +87,19 @@ local function plugin_help(name,number,requester)
               text = text..usage..'\n'
           end
       end
-      text = text..'======================\n'
-    elseif has_usage_data(plugin) then — Is not empty
-      text = text..plugin.usage..'.'
+      text = text..'------------------------------\n'
+    elseif has_usage_data(plugin) then -- Is not empty
+      text = text..plugin.usage..'\n-------------------------------\n'
     end
     return text
 end
  
  
-— !available command
+-- !available command
 local function telegram_help()
   local i = 0
-  local text = "Plugins list:\n\n"
-  — Plugins names
+  local text = "Plugins list for SpheroBoT:\n\n"
+  -- Plugins names
   for name in pairsByKeys(plugins) do
     if plugins[name].hidden then
       name = nil
@@ -110,12 +110,12 @@ local function telegram_help()
   end
   text = text..'\n'..'There are '..i..' plugins help available.'
   text = text..'\n'..'Write "!help [plugin name]" or "!help [plugin number]" for more info.'
-  text = text..'\n'..'Or "!help" to show all info.'
+  text = text..'\n'..'Or "!help all" to show all info.'
   return text
 end
  
  
-— !help command
+-- !help command
 local function help_all(requester)
   local ret = ""
   for name in pairsByKeys(plugins) do
@@ -133,14 +133,14 @@ local function run(msg, matches)
       requester = "sudo"
   elseif is_admin(msg) then
       requester = "admin"
-elseif is_momod(msg) then
+  elseif is_momod(msg) then
       requester = "moderator"
   else
       requester = "user"
   end
-  if matches[1] == "!help" then
+  if matches[1] == "!available" then
     return telegram_help()
-  elseif matches[1] == "!help all" then
+  elseif matches[1] == "!help" then
     return help_all(requester)
   else
     local text = ""
@@ -159,7 +159,7 @@ end
 return {
   description = "Help plugin. Get info from other plugins.  ",
   usage = {
-    "!available: Show list of plugins.",
+    "!available: Show list of plugins for spammer-bot.",
     "!help: Show all commands for every plugin.",
     "!help [plugin name]: Commands for that plugin.",
     "!help [number]: Commands for that plugin. Type !help to get the plugin number."
