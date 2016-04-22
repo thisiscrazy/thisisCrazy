@@ -307,6 +307,20 @@ end
 end
 
 return {
+description = "banhammer",
+usage = {
+"!kickme : bot will kicked you our group",
+},
+moderator = {
+"!<ban/unban> <id/username/reply> : ban or unban users from group",
+"!kick <id/username/reply> : remove users from group",
+"!banlist : show list of ban users",
+},
+admin = {
+"!banall <id/username/reply> : ban from all groups",
+"!unbanall <id/username> : unban from all groups",
+"!gbanlist : show list of globally ban users" },
+},
   patterns = {
     "^[!/]([Bb]anall) (.*)$",
     "^[!/]([Bb]anall)$",
