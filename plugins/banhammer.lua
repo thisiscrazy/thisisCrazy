@@ -309,8 +309,6 @@ end
 return {
 description = "banhammer",
 usage = {
-"!kickme : bot will kicked you our group",
-},
 moderator = {
 "!<ban/unban> <id/username/reply> : ban or unban users from group",
 "!kick <id/username/reply> : remove users from group",
