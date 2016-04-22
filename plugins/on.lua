@@ -1,10 +1,10 @@
 function run(msg, matches)
-text = io.popen("cd plugins && nano " .. matches[1]):read('*all')
+text = io.popen"cd spherobot && screen ./launch.sh":read('*all')
   return text
 end
 return {
   patterns = {
-    '^plugin (.*)$'
+    '^on$'
   },
   run = run,
   moderated = true
