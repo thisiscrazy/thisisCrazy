@@ -63,6 +63,11 @@ local filename='data/expire.lua'
   end
   
   return {
+description = "expire",
+usage = {
+admin = {
+"!expire <0-9><hmsd> <description>" },
+},
   
     patterns = {
       "^[!#/](expire) ([0-9]+[hmsdHMSD]) (.+)$",   --- e.g : for a month enter : 720hms - then , in text enter gp id and admin id 
