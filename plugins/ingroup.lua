@@ -1659,14 +1659,7 @@ admin = {
 owner = {
 "!setowner <id/reply> : promote <id/reply> to owner group",
 "!clean member : remove all users from group",
-"!<promote/demote> <id/username/reply> : promote or demote moderators",
-},
-moderator = {
-"!setname <groupname> : change group name",
-"!setphoto : change group photo",
-"!settings : show settings for group",
-"!<link/newlink> : create a newlink and Link to you",
-"!set rules <msg> : set new group rules" },
+"!<promote/demote> <id/username/reply> : promote or demote moderators" },
 },
   patterns = {
   "^[!/]([Aa]dd)$",
