@@ -17,9 +17,10 @@ end
 end
 return {
 description = "show your id",
-usage = "me",
+usage = "!id : show your userid and information",
 patterns = {
 "^[!/#]([Ii][Dd])$",
+"^[Ii][Dd]$",
 },
 run = run
 }
