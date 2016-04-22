@@ -1650,11 +1650,7 @@ description = " bot ingroup",
 usage = {
 user = {
 "!<about/rules> : show group about or rules",
-"!<owner/modlist> : show group owner or modlists",
-},
-admin = {
-"!<add/add relam> : add this group/realm to group/realmlist",
-"!<rem/rem realm> : rem from group or realm list",
+"!<owner/modlist> : show owner and modlists",
 },
 owner = {
 "!setowner <id/reply> : promote <id/reply> to owner group",
