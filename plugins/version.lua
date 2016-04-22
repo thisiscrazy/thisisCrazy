@@ -1,7 +1,7 @@
 do
 
 function run(msg, matches)
-  return [[#Sphero-SuperGP
+  return [[ SpheroBoT
   
  Version: 2.2
   
@@ -10,7 +10,7 @@ function run(msg, matches)
   !spherobot to chat
   Developer and manager is 
   @joker_admin_1
-  thanks to all]]
+  TNX to all]]
 end
 
 return {
