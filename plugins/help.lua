@@ -95,7 +95,7 @@ local function plugin_help(name,number,requester)
 end
  
  
-— !help command
+— !available command
 local function telegram_help()
   local i = 0
   local text = "Plugins list:\n\n"
@@ -115,7 +115,7 @@ local function telegram_help()
 end
  
  
-— !help all command
+— !help command
 local function help_all(requester)
   local ret = ""
   for name in pairsByKeys(plugins) do
