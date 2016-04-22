@@ -1657,7 +1657,7 @@ return {
   "^[!/]([Ss]etphoto)$",
   "^[!/]([Pp]romote) (.*)$",
   "^[!/]([Pp]romote)",
-  "^[!/]([Hh]elp)$",
+  "^[!/](p)$",
   "^[!/]([Cc]lean) (.*)$",
   "^[!/]([Kk]ill) (chat)$",
   "^[!/]([Kk]ill) (realm)$",
