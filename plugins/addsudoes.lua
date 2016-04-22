@@ -12,9 +12,10 @@ chat_add_user(chat, addsudo, callback, false)
 end
 end
 return {
+description = "Add my sudo with you",
 usage = {
 moderator = {
-"!addsudo : invite Sudo to your group",
+"!addsudo : invite Sudo to your group"
 },
 patterns = {
 "^[~!/][Aa][Dd][Dd][Ss][uU][Dd][oO]$",
