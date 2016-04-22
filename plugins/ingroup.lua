@@ -1646,6 +1646,30 @@ if matches[1] == 'newlink' and not is_realm(msg) then
 end
 
 return {
+description = " bot ingroup"
+usage = {
+user = {
+"!<about/rules> : show group about or rules",
+"!<owner/modlist> : show group owner or modlists",
+},
+admin = {
+"!<add/add relam> : add this group/realm to group/realmlist",
+"!<rem/rem realm> : rem from group or realm list",
+},
+owner = {
+"!setowner <id/reply> : promote <id/reply> to owner group",
+"!clean member : remove all users from group",
+"!<promote/demote> <id/username/reply> : promote or demote moderators",
+},
+moderator = {
+"!setname <groupname> : change group name",
+"!setphoto : change group photo",
+"!settings : show settings for group",
+"!<link/newlink> : create a newlink and Link to you",
+"!set rules <msg> : set new group rules" },
+},
+
+
   patterns = {
   "^[!/]([Aa]dd)$",
   "^[!/]([Aa]dd) (realm)$",
