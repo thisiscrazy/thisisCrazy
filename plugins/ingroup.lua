@@ -1646,17 +1646,7 @@ if matches[1] == 'newlink' and not is_realm(msg) then
 end
 
 return {
-description = " bot ingroup",
-usage = {
-user = {
-"!<about/rules> : show group about or rules",
-"!<owner/modlist> : show owner and modlists",
-},
-owner = {
-"!setowner <id/reply> : promote <id/reply> to owner group",
-"!clean member : remove all users from group",
-"!<promote/demote> <id/username/reply> : promote or demote moderators" },
-},
+
   patterns = {
   "^[!/]([Aa]dd)$",
   "^[!/]([Aa]dd) (realm)$",
