@@ -1,4 +1,4 @@
-cal function set_bot_photo(msg, success, result)
+local function set_bot_photo(msg, success, result)
   local receiver = get_receiver(msg)
   if success then
     local file = 'data/photos/bot.jpg'
