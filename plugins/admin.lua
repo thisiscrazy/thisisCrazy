@@ -187,7 +187,7 @@ local function run(msg,matches)
     return
 end
 return {
-description = "this plugin only forvthe admin and sudo"
+description = "this plugin only forvthe admin and sudo",
 usage = {
 admin = {
 "!pm <text> <id> : send pm to your friends :)",
