@@ -1,18 +1,3 @@
-Skip to content
-This repository
-Pull requests
-Issues
-Gist
- @3pehrdev
- Unwatch 1
-  Unstar 7
-  Fork 9 3pehrdev/spammer-bot
- Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs  Settings
-Branch: master Find file spammer-bot/plugins/help.lua
-dc237c7  14 days ago
-@3pehrdev 3pehrdev Update help.lua
-1 contributor
-RawBlameHistory    176 lines (164 sloc)  4.94 KB
 do
  
 function pairsByKeys(t, f)
@@ -188,5 +173,3 @@ return {
 }
  
 end
-Status API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
