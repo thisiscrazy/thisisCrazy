@@ -115,7 +115,7 @@ local function telegram_help()
 end
  
  
--- !plugin command
+-- !help command
 local function help_all(requester)
   local ret = ""
   for name in pairsByKeys(plugins) do
@@ -153,7 +153,7 @@ local function run(msg, matches)
       text = telegram_help()
     end
     return text
- end
+  end
 end
  
 return {
@@ -161,13 +161,13 @@ return {
   usage = {
     "!available: Show list of plugins for spammer-bot.",
     "!help: Show all commands for every plugin.",
-    "!help> [plugin name]: Commands for that plugin.",
-    "!plugin [number]: Commands for that plugin. Type !help to get the plugin number."
+    "!help [plugin name]: Commands for that plugin.",
+    "!help [number]: Commands for that plugin. Type !help to get the plugin number."
   },
   patterns = {
     "^!available$",
     "^!help",
-    "^!plugin (.+)"
+    "^!help (.+)"
   },
   run = run
 }
