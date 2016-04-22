@@ -1,4 +1,4 @@
-local function set_bot_photo(msg, success, result)
+cal function set_bot_photo(msg, success, result)
   local receiver = get_receiver(msg)
   if success then
     local file = 'data/photos/bot.jpg'
@@ -187,6 +187,17 @@ local function run(msg,matches)
     return
 end
 return {
+description = "this plugin only forvthe admin and sudo"
+usage = {
+admin = {
+"!pm <text> <id> : send pm to your friends :)",
+"!import <link> : join bot to groups via invite link",
+"!block <id> : Block members from account bot",
+"!unblock <id> : unBlock members from account bot",
+"!markread <off/on> : read or no read messages",
+"!setbotphoto : change your bot profile photo",
+"!whois <id> : show information for <id>" },
+},
   patterns = {
 	"^[!/](pm) (%d+) (.*)$",
 	"^[!/](import) (.*)$",
