@@ -1646,7 +1646,7 @@ if matches[1] == 'newlink' and not is_realm(msg) then
 end
 
 return {
-description = " bot ingroup"
+description = " bot ingroup",
 usage = {
 user = {
 "!<about/rules> : show group about or rules",
@@ -1668,8 +1668,6 @@ moderator = {
 "!<link/newlink> : create a newlink and Link to you",
 "!set rules <msg> : set new group rules" },
 },
-
-
   patterns = {
   "^[!/]([Aa]dd)$",
   "^[!/]([Aa]dd) (realm)$",
