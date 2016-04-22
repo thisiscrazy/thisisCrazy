@@ -84,7 +84,7 @@ return text
 end
 end
 elseif matches[1] == "ilter" and matches[2] == "-" then
-if data[tostring(msg.to.id)] then
+if data[tostring(msg.to.id)]n
 local settings = data[tostring(msg.to.id)]['settings']
 if not is_momod(msg) then
 return "only for mods!"
@@ -115,13 +115,13 @@ return {
 description = "Set and Get Variables",
 usage = {
 user = {
-"filter ? (word) : مشاهده عکس العمل",
-"filterlist : لیست فیلتر شده ها",
+"filter ? (word) : show reaction ",
+"filterlist : show filterlist",
 },
 moderator = {
-"filter > (word) : اخطار کردن لغت",
-"filter + (word) : ممنوع کردن لغت",
-"filter - (word) : حذف از فیلتر",
+"filter > (word) : warning the word",
+"filter + (word) : Interdict word",
+"filter - (word) : Remove the filter",
 },
 },
 patterns = {
