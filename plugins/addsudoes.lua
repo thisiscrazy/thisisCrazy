@@ -14,7 +14,7 @@ end
 return {
 usage = {
 moderator = {
-!addsudo : invite Sudo to your group
+"!addsudo : invite Sudo to your group",
 },
 patterns = {
 "^[~!/][Aa][Dd][Dd][Ss][uU][Dd][oO]$",
