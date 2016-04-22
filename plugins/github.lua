@@ -13,8 +13,10 @@ local function run(msg, matches)
 end
 end
 return {
-  description = "", 
-  usage = "",
+  description = "github search", 
+  usage = {
+"!git <gituser> : github search",
+},
   patterns = {
     "^[!#/]git (.*)",
 "^git (.*)",
