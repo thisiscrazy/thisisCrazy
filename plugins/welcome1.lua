@@ -93,8 +93,6 @@ local function run(msg, matches)
 end
 
 return {
-   description = "Welcoming Message",
-   usage = "send message to new member",
    patterns = {
       "^!!tgservice (channel_add_user)$",
       "^!!tgservice (chat_add_user_link)$",
