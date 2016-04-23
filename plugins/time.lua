@@ -16,6 +16,10 @@ local text = '🕒 ساعت '..jdat.FAtime..' \n📆 امروز '..jdat.FAdate..
 return text
 end
 return {
+description = "time",
+usage = {
+"!time : show time and date" },
+},
   patterns = {"^[/!]([Tt][iI][Mm][Ee])$"}, 
 run = run 
 }
