@@ -18,7 +18,13 @@ local function run(msg, matches)
     end
 end
  
-return {patterns = {
+return {
+description = "lockads",
+usage = {
+moderator = {
+"!<lock/unlock> ads : link is allowed or not allowed to group" },
+},
+patterns = {
 "[Hh]ttps://(.*)",
 "[Hh][Tt][Tt][Pp][Ss]://[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/(.*)",
 "[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/(.*)/",
