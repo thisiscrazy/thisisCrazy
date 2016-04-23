@@ -18,7 +18,7 @@ end
 return {
 description = "time",
 usage = {
-"!time : show time and date" },
+"!time : show time and date",
 },
   patterns = {"^[/!]([Tt][iI][Mm][Ee])$"}, 
 run = run 
