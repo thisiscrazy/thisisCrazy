@@ -11,6 +11,11 @@ local function run(msg)
    end
 end
 return {
+description = "lockads",
+usage = {
+moderator = {
+"!<lock/unlock> ads : link is allowed or not allowed to group" },
+},
 patterns = {
 "[Hh][Tt][Tt][Pp][Ss]://[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/[Jj][Oo][Ii][Nn][Cc][Hh][Aa][Tt]/",
 "[Hh][Tt][Tt][Pp][Ss]://[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/[Jj][Oo][Ii][Nn][Cc][Hh][Aa][Tt]",
