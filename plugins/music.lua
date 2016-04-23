@@ -82,7 +82,7 @@ return {
 description = "music",
 usage = {
 "!music <khanande> : show musics for <khanande>",
-"!dl <number> : download and show download link" },
+"!dl <number> : download and show download link",
 },
 patterns = {
  "^[/!]([Mm][Uu][Ss][Ii][Cc]) (.*)$",
