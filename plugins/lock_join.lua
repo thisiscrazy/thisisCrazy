@@ -22,6 +22,11 @@ local function run(msg, matches)
 end
  
 return {
+description = "lockjoin",
+usage = {
+moderator = {
+"!<lock/unlock> join : to lock or unlock join our group" },
+},
   patterns = {
   "^!!tgservice (chat_add_user_link)$"
  },
