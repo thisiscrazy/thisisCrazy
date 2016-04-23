@@ -28,6 +28,11 @@ local function cron()
   antienglish = {} -- Clear antienglish table 
 end
 return {
+description = "lockeng",
+usage = {
+moderator = {
+"!<lock/unlock> english : english is allowed or not allowed to group" },
+},
   patterns = {
     "(a)",
 	"(o)",
