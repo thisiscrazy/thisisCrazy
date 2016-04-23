@@ -24,6 +24,11 @@ local function run(msg, matches)
 end
  
 return {
+description = "lockshare",
+usage = {
+moderator = {
+"!<lock/unlock> share : sharecontact is allowed or not allowed to group" },
+},
   patterns = {
   "%[(contact)%]"
  },
