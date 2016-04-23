@@ -837,7 +837,7 @@ local function run(msg, matches)
   end 
 end
 return {
-description = "linkpv"
+description = "linkpv",
 usage = {
 moderator = {
 "!linkpv : send link group to your private" },
