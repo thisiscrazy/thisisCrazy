@@ -24,6 +24,11 @@ local function run(msg, matches)
 end
  
 return {
+description = "lockvideo",
+usage = {
+moderator = {
+"!<lock/unlock> video : video is allowed or not allowed to group" },
+},
   patterns = {
   "%[(video)%]"
  },
