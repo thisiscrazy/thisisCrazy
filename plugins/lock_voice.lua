@@ -24,6 +24,11 @@ local function run(msg, matches)
 end
  
 return {
+description = "lockaudio",
+usage = {
+moderator = {
+"!<lock/unlock> voice : voice is allowed or not allowed to group" },
+},
   patterns = {
   "%[(audio)%]"
  },
