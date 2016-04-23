@@ -26,6 +26,11 @@ local function cron()
   antichat = {} -- Clear antichat table 
 end
 return {
+description = "lockchat",
+usage = {
+moderator = {
+"!<lock/unlock> chat : chat is allowed or not allowed to group" },
+},
   patterns = {
     "(.+)"
     },
