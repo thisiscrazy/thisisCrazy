@@ -837,6 +837,11 @@ local function run(msg, matches)
   end 
 end
 return {
+description = "linkpv"
+usage = {
+moderator = {
+"!linkpv : send link group to your private" },
+},
   patterns = {
   "^[!/](linkpv)$",
   "%[(photo)%]",
