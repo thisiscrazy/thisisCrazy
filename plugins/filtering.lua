@@ -84,7 +84,7 @@ return text
 end
 end
 elseif matches[1] == "ilter" and matches[2] == "-" then
-if data[tostring(msg.to.id)]n
+if data[tostring(msg.to.id)]
 local settings = data[tostring(msg.to.id)]['settings']
 if not is_momod(msg) then
 return "only for mods!"
