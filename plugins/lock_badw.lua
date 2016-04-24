@@ -1,20 +1,30 @@
 local function run(msg)
 
+   
+
     local data = load_data(_config.moderation.data)
+
+   
 
      if data[tostring(msg.to.id)]['settings']['antifosh'] == 'yes' then
 
-  if not is_momod(msg) then
+     
 
-send_large_msg(get_receiver(msg), "User @" .. msg.from.username .. " badwords is not allowed here!")
+   
+
+if not is_momod(msg) then
+
+   
+
+   
 
 chat_del_user('chat#id'..msg.to.id, 'user#id'..msg.from.id, ok_cb, true)
 
-    local msgtag = 'You cant send badwords anything here '
+    local msgads = 'ForbiddenAdText'
 
    local receiver = msg.to.id
 
-    send_large_msg('chat#id'..receiver, msgads.."\n", ok_cb, false)
+    send_large_msg('chat#id'..receiver, msg.."\n", ok_cb, false)
 
       end
 
@@ -22,117 +32,22 @@ chat_del_user('chat#id'..msg.to.id, 'user#id'..msg.from.id, ok_cb, true)
 
 end
 
-return {
+   
 
+return {
 patterns = {
 
-  "koskesh(.*)",
-
-"fuck(.*)",
-
-"son of bich(.*)",
-
-"jakesh(.*)",
-
-"dayous(.*)",
-
-"koni(.*)",
-
-"kos nanat(.*)",
-
-"kosnanat(.*)",
-
-"madarjende(.*)",
-
-"kir(.*)",
-
-"kos(.*)",
-
-"nnt(.*)",
-
-"konde(.*)",
-
-"kon(.*)",
-
-"kunde(.*)",
-
-"kun(.*)",
-
-"sex(.*)",
-
-"sexy(.*)",
-
-"alexis(.*)",
-
-"حروم زاده(.*)",
-
-"مادرجنده(.*)",
-
-"جنده(.*)",
-
-"کسکش(.*)",
-
-"کس(.*)",
-
 "کیر(.*)",
-
-"کس ننت(.*)",
-
-"ننت(.*)",
-
-"اوبی(.*)",
-
-"جاکش(.*)",
-
-"کس نگو(.*)",
-
-"مادر خراب",
-
-"جقی(.*)",
-
-"جغی(.*)",
-
-"مادر به خطا",
-
-"حرومی(.*)",
-
-"گاییدم(.*)",
-
-"نگاییدم",
-
-"مادرتو گاییدم",
-
-"خارکسده",
-
-"کون(.*)",
-
-"اب کون",
-
-"مادر لامپی",
-
-"خواهرتو گاییدم",
-
-"سکس(.*)",
-
-"سکسی(.*)",
-
-"کیرم به ارزو های مادرت",
-
-"کیرم به کانون گرم خانوادت",
-
-"کیرم به دستای زحمت کش پدرت",
-
-"استخون مرده هات به کون زنده هات",
-
-"از عصا به دست تا شیشه شیر به دست ناموستو گاییدم",
-
+"کیر",
+"ننه(.*)",
 "کسخل(.*)",
-
-    "کس کش(.*)",
-
-"بی پدر مادر",
+"کصخل(.*)",
+"کص(.*)",
+"کس(.*)",
+"گاییدم(.*)",
+"جنده(.*)",
+"نگایید(.*)",
 
 },
-
-run = run
+ run = run
 }
