@@ -30,9 +30,9 @@ local function run(msg, matches)
 
     local receiver = get_receiver(msg)
 
-if not is_owner(msg) then
+if not is_momod(msg) then
 
-return "For owner only !"
+return "For moderators only !"
 
 end
 
@@ -51,7 +51,7 @@ return {
   description = "Will tag all ppl with a msg.",
 
 usage = {
-owner = {
+momod = {
     "/tagall [msg]." },
   },
 
