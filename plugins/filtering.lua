@@ -121,8 +121,7 @@ user = {
 moderator = {
 "filter > (word) : warning the word",
 "filter + (word) : Interdict word",
-"filter - (word) : Remove the filter",
-},
+"filter - (word) : Remove the filter" },
 },
 patterns = {
 "^[Ff](ilter) (.+) (.*)$",
