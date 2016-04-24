@@ -51,8 +51,8 @@ return {
   description = "Will tag all ppl with a msg.",
 
 usage = {
-momod = {
-    "/tagall [msg]." },
+moderator = {
+    "!tagall [msg]." },
   },
 
   patterns = {
