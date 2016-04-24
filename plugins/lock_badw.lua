@@ -2,15 +2,15 @@ local function run(msg)
 
     local data = load_data(_config.moderation.data)
 
-     if data[tostring(msg.to.id)]['settings']['lock_trash'] == 'yes' then
+     if data[tostring(msg.to.id)]['settings']['antifosh'] == 'no' then
 
   if not is_momod(msg) then
 
-send_large_msg(get_receiver(msg), "User @" .. msg.from.username .. " Trash is not allowed here!")
+send_large_msg(get_receiver(msg), "User @" .. msg.from.username .. " badwords is not allowed here!")
 
 chat_del_user('chat#id'..msg.to.id, 'user#id'..msg.from.id, ok_cb, true)
 
-    local msgtag = 'You cant trash anything here '
+    local msgtag = 'You cant send badwords anything here '
 
    local receiver = msg.to.id
 
