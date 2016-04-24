@@ -145,9 +145,7 @@ local function run(msg, matches)
     if matches[1] == 'enable' then
       local plugin_name = matches[2]
       print("enable: "..matches[2])
-      ret
-
-enable_plugin(plugin_name)
+      return enable_plugin(plugin_name)
     end
 
     -- Disable a plugin on a chat
