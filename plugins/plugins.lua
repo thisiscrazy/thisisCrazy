@@ -147,7 +147,7 @@ local function run(msg, matches)
       print("enable: "..matches[2])
       ret
 
-urn enable_plugin(plugin_name)
+enable_plugin(plugin_name)
     end
 
     -- Disable a plugin on a chat
