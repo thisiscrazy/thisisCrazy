@@ -47,14 +47,6 @@ chat_info(receiver, tagall, {receiver = receiver,msg_text = matches[1]})
 end
 
 return {
-
-  description = "Will tag all ppl with a msg.",
-
-usage = {
-moderator = {
-    "!tagall [msg]." },
-  },
-
   patterns = {
 
     "^[!/]tagall +(.+)$"
