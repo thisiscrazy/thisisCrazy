@@ -15,11 +15,11 @@ end
 
 local function returnids(cb_extra, success, result)
    local receiver = cb_extra.receiver
-   local chat_id = "chat#id"..result.id
+   --local chat_id = "chat#id"..result.id
    local chat_id = result.id
    local chatname = result.print_name
 
-   local text = '📛Group #ID : '..chatname..'\n------------------\n'📛User #ID : '..v.id..'\n---------------\n📛Total #members : '..result.members_num..'
+   local text = '📛Group #ID: '..chatname..' 📛Group #ID: '..chat_id..'📛Total #Members: '..result.members_num..'\n______________________________\n'
       i = 0
    for k,v in pairs(result.members) do
       i = i+1
@@ -35,7 +35,7 @@ local function username_id(cb_extra, success, result)
    for k,v in pairs(result.members) do
       vusername = v.username
       if vusername == qusername then
-        text = 'Username: @'..vusername..'\nID Number: '..v.id
+       text = 'Username: @'..vusername..'\nID Number: '..v.id
       end
    end
    send_large_msg(receiver, text)
@@ -61,7 +61,7 @@ end
 local function run(msg, matches)
    local receiver = get_receiver(msg)
       if matches[1] == "id" and matches[2] == 'all>' then
-      — !ids? (chat) (%d+)
+      -- !ids? (chat) (%d+)
          local chat = 'chat#id'..matches[3]
          chat_info(chat, returnids, {receiver=receiver})
       else
@@ -72,12 +72,12 @@ local function run(msg, matches)
          chat_info(chat, returnids, {receiver=receiver})
       end
    else
-     if not is_chat_msg(msg) then
-       return "Only work in group"
-     end
-     local qusername = string.gsub(matches[1], "@", "")
-     local chat = get_receiver(msg)
-     chat_info(chat, username_id, {receiver=receiver, qusername=qusername})
+    if not is_chat_msg(msg) then
+     return "Only work in group"
+    end
+    local qusername = string.gsub(matches[1], "@", "")
+    local chat = get_receiver(msg)
+    chat_info(chat, username_id, {receiver=receiver, qusername=qusername})
    end
 return {
    patterns = {
@@ -85,7 +85,7 @@ return {
       "^([Ii]d gp)$",
       "^([Ii]d me)$",
       "^[Ii]d (.*)$",
-    "^([Ii]d) (all>)$",
+   "^([Ii]d) (all>)$",
    },
    run = run
 }
