@@ -214,7 +214,7 @@ function create_config( )
     "spammer2",
     "spammer3",
     "stats",
-    "plugins2",
+    "plugins",
     "owners",
     "auto_leave",
     "set",
