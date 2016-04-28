@@ -156,8 +156,7 @@ local function run(msg, matches)
     return list_all_plugins()
   end
 
-  -- Re-enable a plugin for thi
-s chat
+  -- Re-enable a plugin for this chat
   if matches[1] == '+' and matches[3] == 'chat' then
     local receiver = get_receiver(msg)
     local plugin = matches[2]
