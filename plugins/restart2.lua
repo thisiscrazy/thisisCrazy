@@ -1,5 +1,5 @@
 function run(msg, matches)
-text = io.popen"kill $(pgrep telegram-cli) && screen ./launch.sh" :read('*all')
+text = io.popen"kill $(pgrep telegram-cli) && ./launch.sh" :read('*all')
   return text
 end
 return {
