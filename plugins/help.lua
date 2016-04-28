@@ -77,7 +77,7 @@ local function plugin_help(name,number,requester)
               if requester == 'sudo' then
                   if (type(plugin.usage.sudo) == "table") then
                       for k,v in pairs(plugin.usage.sudo) do
-                          text = text..v..'\n'
+                          text = text..v..'\n---\n'
                       end
                   elseif has_usage_data(plugin) then -- Is not empty
                       text = text..plugin.usage.sudo..'\n'
@@ -87,9 +87,9 @@ local function plugin_help(name,number,requester)
               text = text..usage..'\n'
           end
       end
-      text = text..'\n'
+      text = text..'\n---\n'
     elseif has_usage_data(plugin) then -- Is not empty
-      text = text..plugin.usage..'\n'
+      text = text..plugin.usage..'\n---\n'
     end
     return text
 end
