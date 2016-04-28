@@ -36,7 +36,7 @@ local function run(msg,matches)
 
    local name = matches[2]
 
-      if matches[1] == "saveplug" and matches[2] and is_sudo(msg) then
+      if matches[1] == "save" and matches[2] and is_sudo(msg) then
 
 load_document(msg.reply_id, saveplug, {msg=msg,name=name})
 
@@ -52,7 +52,7 @@ return {
 
   patterns = {
 
-"^[!/#](saveplug) (.*)$",
+"^[!/#](save) (.*)$",
 
   },
 
