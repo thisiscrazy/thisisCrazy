@@ -1712,7 +1712,6 @@ return {
   --"^([Pp]ublic) (.*)$",
   "^([Mm]odlist)$",
   "^([Nn]ewlink)$",
-  "^([Ll]ink)$",
   "^([Kk]ickinactive)$",
   "^([Kk]ickinactive) (%d+)$",
   "%[(photo)%]",
