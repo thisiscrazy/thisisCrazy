@@ -66,8 +66,7 @@ if data[tostring(msg.to.id)] then
    if not group_link then
     return "first use /newlink to create a newlink"
    end
-   return "Group
-Link:\n______________________________\n"..group_link
+   return "GroupLink:\n______________________________\n"..group_link
   end
  end
 end
