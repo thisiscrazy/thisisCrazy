@@ -29,7 +29,7 @@ if data[tostring(msg.to.id)] then
     return "First make a Newlink!"
    end
    send_large_msg('chat#'..msg.to.id, "Link sent!")
-   send_large_msg('user#'..msg.from.id, "Groups link:\n______________________________\n"..group_link)
+   send_large_msg('user#'..msg.from.id,"Grouplink:\n___________________\n"..group_link)
   end
   
  else
