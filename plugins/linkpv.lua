@@ -18,7 +18,7 @@ if data[tostring(msg.to.id)] then
     save_data(_config.moderation.data, data)
     local group_link = data[tostring(msg.to.id)]['settings']['set_link']
     send_large_msg(receiver, "Newlink sent!")
-    send_large_msg('user#'..msg.from.id, "Newlink".. msg.to.title.."\n______________________________\n"..group_link)
+    send_large_msg('user#'..msg.from.id, "Newlink for".. msg.to.title.." :\n______________________________\n"..group_link)
    end
    local receiver = 'chat#'..msg.to.id
    return export_chat_link(receiver, link_callback, {receiver = receiver})
@@ -29,7 +29,7 @@ if data[tostring(msg.to.id)] then
     return "First make a Newlink!"
    end
    send_large_msg('chat#'..msg.to.id, "Link sent!")
-   send_large_msg('user#'..msg.from.id,"Grouplink\n___________________\n"..group_link)
+   send_large_msg('user#'..msg.from.id,"Group link for ".. msg.to.title.." : \n___________________\n"..group_link)
   end
   
  else
@@ -66,7 +66,7 @@ if data[tostring(msg.to.id)] then
    if not group_link then
     return "first use /newlink to create a newlink"
    end
-   return "GroupLink:\n______________________________\n"..group_link
+   return "Group Link for "msg.to.title.." : \n______________________________\n"..group_link
   end
  end
 end
