@@ -77,7 +77,7 @@ return {
   description = "Link Manager System",
   usage = {
   moderator = {
- "link : مشاهده لينک",
+ "link : Show Group Link",
  "link pv : send link to your private",
  "newlink : create a newlink",
  "newlink pv : send group newlink to your private msg",
