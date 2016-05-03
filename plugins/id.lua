@@ -1,6 +1,6 @@
 do function run(msg, matches)
 if matches[1]:lower() == 'id' and is_sudo(msg) then
-return "[Sudo]️\n#Your ID : "..msg.from.id.."\n#Your name : "..msg.from.print_name.."\n#Group name : "..msg.to.title.."\n#Group ID : "..msg.to.id.."\n#msg ID : "..msg.id.."\n#Your msg : "..msg.text.."\n#Username : @"..msg.from.username
+return "[Sudo]️\n#Your ID : "..msg.from.id.."\n#Your name : "..msg.from.print_name.."\n#Group name : "..msg.to.title.."\n#Group ID : "..msg.to.id.."\n#msg ID : "..msg.id.."\n#Your msg : "..msg.text.."\n#Username : @"..msg.from.username.."\nTotal messages : \n"..user_info_msgs
 end
 if matches[1]:lower() == 'id' and is_admin(msg) then
 return "#Admin️\n#Your ID : "..msg.from.id.."\n#Your name : "..msg.from.print_name.."\n#Group name : "..msg.to.title.."\n#Group ID : "..msg.to.id.."\n#msg ID : "..msg.id.."\n#Your msg : "..msg.text.."\n#Username : @"..msg.from.username
