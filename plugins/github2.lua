@@ -3,7 +3,7 @@ local function run(msg, matches)
       local dat = https.request("https://api.github.com/repos/"..matches[2]) 
       local jdat = JSON.decode(dat) 
       if jdat.message then 
-         return "آدرس وارد شده صحیح نیست به این صورت وارد کنید:\ngithub username/project\ngithub shayan-soft/umbrella" 
+         return "Not Found!\nExample:\ngithub username/project\ngithub 3pehrdev/spammer-bot\n\nSphero-bot ch: @SpheroCh" 
       end 
       local base = "curl 'https://codeload.github.com/"..matches[2].."/zip/master'" 
       local data = io.popen(base):read('*all') 
@@ -15,45 +15,45 @@ local function run(msg, matches)
       local dat = https.request("https://api.github.com/repos/"..matches[2]) 
       local jdat = JSON.decode(dat) 
       if jdat.message then 
-         return "آدرس وارد شده صحیح نیست به این صورت وارد کنید:\ngithub username/project\ngithub shayan-soft/umbrella" 
+         return "Not found! : \nExample : github username/project\ngithub 3pehrdev/spammer-bot\n\n Sphero-bot ch:  @SpheroCh" 
       end 
       local res = https.request(jdat.owner.url) 
       local jres = JSON.decode(res) 
       send_photo_from_url("chat#id"..msg.to.id, jdat.owner.avatar_url) 
-      return "مشخصات اکانت:\n" 
-         .."نام اکانت: "..(jres.name or "-----").."\n" 
-         .."يوزرنيم: "..jdat.owner.login.."\n" 
-         .."نام شرکت: "..(jres.company or "-----").."\n" 
-         .."وبسايت: "..(jres.blog or "-----").."\n" 
-         .."ايميل: "..(jres.email or "-----").."\n" 
-         .."موقعيت مکاني: "..(jres.location or "-----").."\n" 
-         .."تعداد پروژه: "..jres.public_repos.."\n" 
-         .."تعداد دنبال کننده: "..jres.followers.."\n" 
-         .."تعداد دنبال شده: "..jres.following.."\n" 
-         .."تاريخ ساخت اکانت: "..jres.created_at.."\n" 
-         .."بيوگرافي: "..(jres.bio or "-----").."\n\n" 
-         .."مشخصات پروژه:\n" 
-         .."نام پروژه: "..jdat.name.."\n" 
-         .."صفحه گيتهاب: "..jdat.html_url.."\n" 
-         .."پکيج سورس: "..jdat.clone_url.."\n" 
-         .."وبلاگ پروژه: "..(jdat.homepage or "-----").."\n" 
-         .."تاريخ ايجاد: "..jdat.created_at.."\n" 
-         .."آخرين آپديت: "..(jdat.updated_at or "-----").."\n" 
-         .."زبان برنامه نويسي: "..(jdat.language or "-----").."\n" 
-         .."سايز اسکريپت: "..jdat.size.."\n" 
-         .."ستاره ها: "..jdat.stargazers_count.."\n" 
-         .."بازديدها: "..jdat.watchers_count.."\n" 
-         .."انشعابات: "..jdat.forks_count.."\n" 
-         .."مشترکين: "..jdat.subscribers_count.."\n" 
-         .."درباره ي پروژه:\n"..(jdat.description or "-----").."\n" 
+      return "Account About:\n" 
+         .."Account Name: "..(jres.name or "-----").."\n" 
+         .."Username: "..jdat.owner.login.."\n" 
+         .."Company Name: "..(jres.company or "-----").."\n" 
+         .."WebSite: "..(jres.blog or "-----").."\n" 
+         .."E-mail: "..(jres.email or "-----").."\n" 
+         .."Location: "..(jres.location or "-----").."\n" 
+         .."Repos: "..jres.public_repos.."\n" 
+         .."Followers: "..jres.followers.."\n" 
+         .."Following: "..jres.following.."\n" 
+         .."Created at: "..jres.created_at.."\n" 
+         .."Bio: "..(jres.bio or "-----").."\n\n" 
+         .."Details:\n" 
+         .."Project Name: "..jdat.name.."\n" 
+         .."Github Page: "..jdat.html_url.."\n" 
+         .."Source Package: "..jdat.clone_url.."\n" 
+         .."Project Weblog: "..(jdat.homepage or "-----").."\n" 
+         .."Account Created at: "..jdat.created_at.."\n" 
+         .."Last Update: "..(jdat.updated_at or "-----").."\n" 
+         .."Programming Language: "..(jdat.language or "-----").."\n" 
+         .."Script Size: "..jdat.size.."\n" 
+         .."Stars: "..jdat.stargazers_count.."\n" 
+         .."Watch: "..jdat.watchers_count.."\n" 
+         .."Fork: "..jdat.forks_count.."\n" 
+         .."Subscribers: "..jdat.subscribers_count.."\n" 
+         .."Description:\n"..(jdat.description or "-----").."\n" 
    end 
 end 
 
 return { 
    description = "Github Informations", 
    usage = { 
-      "github (account/proje) : مشخصات پروژه و اکانت", 
-      "github> (account/proje) : دانلود سورس", 
+      "github (account/proje) : Project informations", 
+      "github> (account/proje) : Source Download", 
       }, 
    patterns = { 
       "^([Gg]ithub>) (.*)", 
