@@ -8,7 +8,7 @@ if data[tostring(msg.to.id)] then
  local settings = data[tostring(msg.to.id)]['settings']
  if #matches == 2 then
   
-  if matches[1] == 'ewlink' then
+  if matches[1] == 'ewlink' and is_momod(msg) then
    local function link_callback (extra , success, result)
     local receiver = extra.receiver
     if success == 0 then
@@ -23,7 +23,7 @@ if data[tostring(msg.to.id)] then
    local receiver = 'chat#'..msg.to.id
    return export_chat_link(receiver, link_callback, {receiver = receiver})
 
-  elseif matches[1] == 'ink' then
+  elseif matches[1] == 'ink' and is_momod(msg) then
    local group_link = data[tostring(msg.to.id)]['settings']['set_link']
    if not group_link then
     return "First make a Newlink!"
@@ -34,7 +34,7 @@ if data[tostring(msg.to.id)] then
   
  else
   
-  if matches[1] == 'ewlink' then
+  if matches[1] == 'ewlink' and is_momod(msg) then
    local function link_callback (extra , success, result)
     local receiver = extra.receiver
     if success == 0 then
@@ -48,7 +48,7 @@ if data[tostring(msg.to.id)] then
    local receiver = 'chat#'..msg.to.id
    return export_chat_link(receiver, link_callback, {receiver = receiver})
   
-  elseif matches[1] == 'link' then
+  elseif matches[1] == 'link' and is_momod(msg) then
    local function link_callback (extra , success, result)
     local receiver = extra.receiver
     if success == 0 then
@@ -61,7 +61,7 @@ if data[tostring(msg.to.id)] then
    local receiver = 'chat#'..msg.to.id
    return export_chat_link(receiver, link_callback, {receiver = receiver})
 
-  elseif matches[1] == 'ink' then
+  elseif matches[1] == 'ink' and is_momod(msg) then
    local group_link = data[tostring(msg.to.id)]['settings']['set_link']
    if not group_link then
     return "first use /newlink to create a newlink"
