@@ -60,7 +60,7 @@ local function plugin_help(name,number,requester)
                           text = text..v..'\n'
                       end
                   elseif has_usage_data(plugin) then -- Is not empty
-                      text = text..plugin.usage.moderator..'\n'
+                      text = text..plugin.usage.moderator..''
                   end
               end
           elseif ku == 'admin' then -- usage for admin
@@ -70,7 +70,7 @@ local function plugin_help(name,number,requester)
                           text = text..v..'\n'
                       end
                   elseif has_usage_data(plugin) then -- Is not empty
-                      text = text..plugin.usage.admin..'\n'
+                      text = text..plugin.usage.admin..''
                   end
               end
           elseif ku == 'sudo' then -- usage for sudo
@@ -80,7 +80,7 @@ local function plugin_help(name,number,requester)
                           text = text..v..'\n---\n'
                       end
                   elseif has_usage_data(plugin) then -- Is not empty
-                      text = text..plugin.usage.sudo..'\n'
+                      text = text..plugin.usage.sudo..''
                   end
               end
           else
@@ -89,7 +89,7 @@ local function plugin_help(name,number,requester)
       end
       text = text..'\n---\n'
     elseif has_usage_data(plugin) then -- Is not empty
-      text = text..plugin.usage..'\n---\n'
+      text = text..plugin.usage..''
     end
     return text
 end
