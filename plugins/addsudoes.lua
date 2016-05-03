@@ -16,9 +16,7 @@ description = "Add my sudo with you",
 usage = {
 user = {
 " List Help For Sphero-Bot:",
-" ",
 "Developed by : @Joker_admin_1",
-" ", 
 },
 moderator = {
 "!addsudo : invite Sudo to your group" },
