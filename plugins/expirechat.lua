@@ -4,8 +4,6 @@ return "!rem"
 end
 end 
 return { 
-description = "Chat With Robot Server", 
-usage = "chat with robot",
  patterns = {
  "^GroupTimeEnd!:free$",
 },
