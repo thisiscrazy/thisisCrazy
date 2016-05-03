@@ -16,7 +16,7 @@ function pairsByKeys(t, f)
  
 -- Returns true if is not empty
 local function has_usage_data(dict)
-  if (dict.usage == nil or dict.usage == '') then
+  if (dict.usage == nil or dict.usage == '\n') then
     return false
   end
   return true
@@ -60,7 +60,7 @@ local function plugin_help(name,number,requester)
                           text = text..v..'\n'
                       end
                   elseif has_usage_data(plugin) then -- Is not empty
-                      text = text..plugin.usage.moderator..''
+                      text = text..plugin.usage.moderator..'\n'
                   end
               end
           elseif ku == 'admin' then -- usage for admin
@@ -70,17 +70,17 @@ local function plugin_help(name,number,requester)
                           text = text..v..'\n'
                       end
                   elseif has_usage_data(plugin) then -- Is not empty
-                      text = text..plugin.usage.admin..''
+                      text = text..plugin.usage.admin..'\n'
                   end
               end
           elseif ku == 'sudo' then -- usage for sudo
               if requester == 'sudo' then
                   if (type(plugin.usage.sudo) == "table") then
                       for k,v in pairs(plugin.usage.sudo) do
-                          text = text..v..'\n---\n'
+                          text = text..v..''
                       end
                   elseif has_usage_data(plugin) then -- Is not empty
-                      text = text..plugin.usage.sudo..''
+                      text = text..plugin.usage.sudo..'\n'
                   end
               end
           else
