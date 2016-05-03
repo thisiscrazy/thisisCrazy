@@ -57,7 +57,7 @@ local function plugin_help(name,number,requester)
               if requester == 'moderator' or requester == 'admin' or requester == 'sudo' then
                   if (type(plugin.usage.moderator) == "table") then
                       for k,v in pairs(plugin.usage.moderator) do
-                          text = text..v..'\n'
+                          text = text..v..'\n---\n'
                       end
                   elseif has_usage_data(plugin) then -- Is not empty
                       text = text..plugin.usage.moderator..'\n---\n'
@@ -67,7 +67,7 @@ local function plugin_help(name,number,requester)
               if requester == 'admin' or requester == 'sudo' then
                   if (type(plugin.usage.admin) == "table") then
                       for k,v in pairs(plugin.usage.admin) do
-                          text = text..v..'\n'
+                          text = text..v..'\n---\n'
                       end
                   elseif has_usage_data(plugin) then -- Is not empty
                       text = text..plugin.usage.admin..'\n---\n'
@@ -77,7 +77,7 @@ local function plugin_help(name,number,requester)
               if requester == 'sudo' then
                   if (type(plugin.usage.sudo) == "table") then
                       for k,v in pairs(plugin.usage.sudo) do
-                          text = text..v..''
+                          text = text..v..'\n---\n'
                       end
                   elseif has_usage_data(plugin) then -- Is not empty
                       text = text..plugin.usage.sudo..'\n---\n'
