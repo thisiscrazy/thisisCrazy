@@ -84,7 +84,7 @@ local function plugin_help(name,number,requester)
                   end
               end
           else
-              text = text..usage..'\n'
+              text = text..usage..'\n---\n'
           end
       end
       text = text..''
