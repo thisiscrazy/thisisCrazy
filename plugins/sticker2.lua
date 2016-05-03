@@ -94,8 +94,11 @@ end
 end 
 return { 
     usage = {
-"photo to sticker\n!sticker\njust reply to your photo\nsticker to photo\n!photo\njust reply to your sticker\ntext to sticker\n!st [text]
-default\n!st [text] [color]\ncolors : red , black , blue , green , yellow , pink , orange , brown\n!st [text] [color] [font]\nfonts : bold , italic , fun , arial\n!st [text] [color] [font] [size]\nsizes : small , larg",
+"!sticker <reply> : photo to sticker by reply",
+"!photo <reply> : sticker to photo by reply",
+"!st [text] : text to sticker",
+"!st [text] [color]",
+"!st [text] [color] [font] [size]",
             }, 
    patterns = { 
        "^!(st) (.*) ([^%s]+) (.*) (small)$", 
