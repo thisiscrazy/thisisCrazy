@@ -1,7 +1,7 @@
 local function tosticker(msg, success, result) 
   local receiver = get_receiver(msg) 
   if success then 
-    local file = 'sticker/'..msg.from.peer_id..'.webp' 
+    local file = 'sticker/'..msg.from.id..'.webp' 
     print('File downloaded to:', result) 
     os.rename(result, file) 
     print('File moved to:', file) 
@@ -15,7 +15,7 @@ end
 local function toimage(msg, success, result) 
   local receiver = get_receiver(msg) 
   if success then 
-    local photofile = 'sticker/'..msg.from.peer_id..'.jpg' 
+    local photofile = 'sticker/'..msg.from.id..'.jpg' 
     print('File downloaded to:', result) 
     os.rename(result, photofile) 
     print('File moved to:', file) 
@@ -93,21 +93,9 @@ end
 
 end 
 return { 
-    usage = {'<b>-photo to sticker</b>', 
-        '<code>!sticker</code>', 
-        'just reply to your photo', 
-        '<b>-sticker to photo</b>', 
-        '<code>!photo</code>', 
-        'just reply to your sticker', 
-        '<b>-text to sticker</b>', 
-        '<code>!st [text]</code>', 
-        'default', 
-            '<code>!st [text] [color]</code>', 
-            'colors : <i>red , black , blue , green , yellow , pink , orange , brown</i>', 
-            '<code>!st [text] [color] [font]</code>', 
-            'fonts : <i>bold , italic , fun , arial</i>', 
-            '<code>!st [text] [color] [font] [size]</code>', 
-            'sizes : <i>small , larg</i>', 
+    usage = {
+"photo to sticker\n!sticker\njust reply to your photo\nsticker to photo\n!photo\njust reply to your sticker\ntext to sticker\n!st [text]
+default\n!st [text] [color]\ncolors : red , black , blue , green , yellow , pink , orange , brown\n!st [text] [color] [font]\nfonts : bold , italic , fun , arial\n!st [text] [color] [font] [size]\nsizes : small , larg",
             }, 
    patterns = { 
        "^!(st) (.*) ([^%s]+) (.*) (small)$", 
