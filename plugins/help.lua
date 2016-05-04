@@ -166,7 +166,7 @@ return {
   },
   patterns = {
     "^!available$",
-    "^!help",
+    "^!help$",
     "^!plugin> (.+)"
   },
   run = run
